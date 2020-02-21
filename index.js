@@ -2,7 +2,7 @@
 
 // put your own value below!
 const apiKey = 'VwVN4mFrPldRVqE9l6anxsbcDWWybWMT2U9Wx2q4'; 
-const searchURL = 'https://developer.nps.gov/api/v1/parks?parkCode=';
+const searchURL = 'https://developer.nps.gov/api/v1/parks';
 
 // curl -H 'X-Api-Key: VwVN4mFrPldRVqE9l6anxsbcDWWybWMT2U9Wx2q4' 'https://developer.nps.gov/api/v1/parks?parkCode=acad'
 function formatQueryParams(params) {
@@ -36,7 +36,7 @@ function getNatlParks(query, maxResults=10) {
     stateCode: query,
     limit: maxResults
   };
-  const queryString = formatQueryParams(params)
+  const queryString = formatQueryParams(params);
   const url = searchURL + '?' + queryString;
 
   console.log(url);
